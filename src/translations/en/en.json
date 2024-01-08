@@ -1,0 +1,193 @@
+{
+  "global": {
+    "Header": {
+      "home": "Home",
+      "buyer": "Buyer",
+
+      "farmer": "Farmer",
+      "signIn": "SignIn",
+      "profile": "Profile",
+      "logout": "Logout",
+      "signin": "Sign in",
+      "about": "About"
+    },
+    "HomePage": {
+      "homeHead": {
+        "farmerDashTitle": "Welcome to Farmer Dashboard",
+        "buyerDashTitle": "Welcome to Buyer Dashboard",
+        "welcomeTitle": "Welcome to AgroAuction",
+        "subHead": "We cultivate new {{crops}} to make farmers increase profits!",
+        "crops": "crops",
+        "farmerSubHead": "Take control of your farm with the AgroAuction Farmer Dashboard",
+        "buyerSubHead": "Cultivate Your Success, Bid with Precision - AgroAuction, Where Harvest Meets Opportunity!"
+      },
+      "explore": "Explore",
+      "mapCard": {
+        "text1": "Farmer",
+        "description1": "At AgroAuction, we've set out to be the catalyst for change, helping farmers break free from the cycle of poverty and providing them with a platform to reap the benefits they deserve. ",
+        "text2": "Buyer",
+        "description2": "For buyers, AgroAuction is more than just a marketplace. It's an opportunity to access a vast array of products, including organic fruits and vegetables, and engage directly with sellers."
+      },
+      "servicesCarousel": {
+        "heading": "What we offer",
+        "subHeading": "Discover the future of agro-commerce with AgroAuction. Our platform offers a seamless online marketplace for buying and selling a diverse range of top-quality agricultural products. Experience real-time bidding, secure transactions, and a user-friendly interface designed for the modern farmer. Join us in revolutionizing the way you connect with buyers and sellers in the agricultural industry.",
+        "name1": "Quality Products",
+        "items1": {
+          "name1": "We do our quality checks before selling",
+          "name2": "We provide the best quality products"
+        },
+        "caption1": "Get the best products from us!",
+        "name2": "Satisfied Customers!",
+        "items2": {
+          "name1": "Our customers are always satisfied with our products",
+          "name2": "Our customers are always satisfied with our products"
+        },
+        "captain2": "Our customers are our first priority!",
+        "name3": "Pest-free Farming",
+        "captain3": "Our farms are pest-free!",
+        "items3": {
+          "name1": "Enjoy pest-free farming with us",
+          "name2": "Pest-free farming is our priority"
+        }
+      }
+    },
+    "Footer": {
+      "aboutUs": "About Us",
+      "text": "Our mission at AgroAuction is to bring a breath of fresh air to this vital industry. We're here to address the challenges, empower our hardworking farmers",
+      "quickLinks": "Quick Links",
+      "link": {
+        "farmer": "Farmer",
+        "buyer": "Buyer",
+        "about": "About Us",
+        "home": "Home"
+      },
+      "contact": "Contact us",
+      "country": "Islamabad, Pakistan",
+      "email": "example@gmail.com",
+      "phone": "+92 318 0590080",
+      "whatsapp": "+92 318 0590080",
+      "socialText": "Get connected with us on social networks!",
+      "rights": "2023 Agroic. All rights reserved."
+    },
+    "Farmer": {
+      "title": " Empowering Farmers for a Prosperous Tomorrow",
+      "subTitle": "Empowerment for Pakistan's Farmers In a nation where agriculture plays a pivotal role, the well-being of our farmers is of utmost importance.",
+      "description": "Sell Your Producing Material through Us",
+      "buttonText": "Sell your Product"
+    },
+    "Consumer": {
+      "title": "BUYER",
+      "subTitle": "Explore seamless buying at AgroAuction—your go-to for outstanding value in organic fruits and vegetables. Engage directly with sellers and enjoy the convenience of a shopping cart for a superior shopping experience.",
+      "searchPlaceholder": "Search for Product",
+      "rating": "Rating",
+      "ratingLth": "Rating Low to High",
+      "ratingHtl": "Rating High to Low",
+      "location": "Location",
+      "refresh": "Refresh",
+      "cart": "Cart",
+      "orders": "Order"
+    },
+    "AboutUs": {
+      "title": "About Us",
+      "body1": "We are a team of passionate farmers and agriculture experts who have come together to make a difference in the way we grow and consume our food. Our mission is to empower small-scale farmers and connect them with consumers who are looking for fresh,sustainable, and locally-sourced produce.",
+      "body2": "We believe that by supporting small farmers, we can promote biodiversity, reduce our carbon footprint, and create more resilient communities. We offer a wide range of products, from fresh fruits and vegetables. All of our products are grown using organic farming methods and are carefully selected to ensure thehighest quality.",
+      "body3": "Our AgroAuction platform allows customers to place orders online and choose from a variety of delivery options. Customers can also sign up for our subscription service and receive a delivery of fresh, seasonal produce straight to their door.",
+      "body4": "We also believe in transparency and traceability. All our products come with detailed information about the farm where it was grown, including photos, videos, and details about the farm and the farmer. We are committed to building a sustainable food system, and we hope that you will join us on this journey. With your support, we can make a real impact in the way we grow and consume our food.",
+      "thanks": "Thank you for choosing us."
+    },
+    "FarmerDashboard": {
+      "title": "Farmer Dashboard",
+      "reports": "Reports",
+      "upload": "Add Items",
+      "products": {
+        "title": "Products",
+        "id": "ID",
+        "productTitle": "Product Title",
+        "description": "Product Description",
+        "rate": "Rate",
+        "location": "Location",
+        "weight": "Weight",
+        "weightType": "Weight Type",
+        "count": "Count",
+        "countType": "Count Type",
+        "volume": "Volume",
+        "volumeType": "Volume Type",
+        "image": "Image",
+        "status": "Status",
+        "listonAuction": "List on Auction",
+        "actions": "Actions",
+        "auctioned": "Auctioned"
+      },
+      "uploadPage": {
+        "uploadTitle": "Upload Items",
+        "uploadImageText": "Click here to upload product",
+        "productName": "Product Name",
+        "price": "Price",
+        "city": "City",
+        "lahore": "Lahore",
+        "islamabad": "Islamabad",
+        "peshawar": "Peshawar",
+        "quetta": "Quetta",
+        "karachi": "Karachi",
+        "qualityTitle": "Product Quantity Measurement",
+        "weight": "Weight",
+        "grams": "grams",
+        "kilograms": "kilograms",
+        "miligrams": "miligrams",
+        "count": "Count",
+        "pieces": "Pieces",
+        "volume": "Volume",
+        "bushels": "bushels",
+        "description": "Write Description",
+        "buttonText": "Save Data"
+      },
+      "reportPage": {
+        "title": "Reports",
+        "productTitle": "Product Title",
+        "soldAmount": "Sold Amount",
+        "image": "Image",
+        "productNotSoldYet": "Your Product is not Sold Yet"
+      }
+    },
+    "SignIn": {
+      "email": "Email [*]",
+      "password": "Password [*]",
+      "buttonText": "Sign In",
+      "noAccountText": "Don't have an account?"
+    },
+    "SignUp": {
+      "admin": "Admin",
+      "username": "Username [*]",
+      "email": "Email [*]",
+      "password": "Password [*]",
+      "confirmPassword": "Confirm Password [*]",
+      "role": "Role [*]",
+      "signUp": "SignUp",
+      "haveAccount": "Already have an account?",
+      "login": "Login",
+      "user": "User",
+      "farmer": "Farmer"
+    },
+    "checkout": {
+      "cardNumber": "Card Number",
+      "month": "Expiry Month",
+      "year": "Expiry Year",
+      "cvc": "CVC",
+      "productInfo": "Product Information",
+      "cardInfo": "Card Information",
+      "buying": "Buying",
+      "statement": "after winning auction of",
+      "pkr": "PKR",
+      "amount": "Amount",
+      "name": "Name",
+      "description": "Description",
+      "buttonText": "Checkout"
+    },
+    "review": {
+      "heading": "Review Page",
+      "feedback": "Feedback",
+      "rating": "Rating",
+      "buttonText": "Submit Review"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+.card {
+  color: black;
+}
+
+.productDetailsImage img {
+  width: 100%;
+  height: 350px;
+  /* object-fit: cover; */
+  object-fit: contain;
+}
+
+/* .productDetailsContent {
+  padding-left: 2em;
+} */
+/* 
+.productDetailsQuantity {
+  margin: 1em 0;
+} */
+
+/* .productDetailsQuantity button:first-child {
+  margin-right: 1em;
+} */
+
+/* .productDetailsQuantity button:last-child {
+  margin-left: 1em;
+} */
+
+.heading {
+  margin: 1em 0;
+}
+
+.sellerDescription {
+  margin-top: 1em;
+  background-color: #e4e5e9;
+  border-radius: 10px;
+}
+
+.sellerDescription button {
+  float: right;
+  margin: 1em;
+}
+
+.sellerDescription h4 {
+  margin-bottom: 1em;
+}
+
+.sellerNameRow {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.sellerNameRow img {
+  border-radius: 10px;
+  margin-right: 1em;
+}
+
+.sellerNameRow h5 {
+  margin-bottom: 0;
+}
+
+.sellerRating {
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.filledStar {
+  color: #f5c518;
+  font-size: 1.5em;
+  margin-left: 5px;
+}
+
+.outlineStar {
+  color: darkgray;
+  font-size: 1.5em;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .productDetailsImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .productDetailsContent {
+    padding-left: 0;
+  }
+
+  .sellerDescription {
+    margin-top: 1em;
+    background-color: #e4e5e9;
+    border-radius: 10px;
+  }
+
+  .sellerDescription button {
+    float: right;
+    margin: 1em;
+  }
+
+  .sellerDescription h4 {
+    margin-bottom: 1em;
+  }
+
+  .sellerNameRow {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+  }
+
+  .sellerNameRow img {
+    border-radius: 10px;
+    margin-right: 1em;
+  }
+
+  .sellerNameRow h5 {
+    margin-bottom: 0;
+  }
+
+  .sellerRating {
+    margin: 1em 0;
+    padding: 0 1em;
+  }
+
+  .stars {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .filledStar {
+    color: #f5c518;
+    font-size: 1.5em;
+  }
+
+  .outlineStar {
+    color: #e4e5e9;
+    font-size: 1.5em;
+  }
+  .bidsTableContainer {
+    margin-top: 16px;
+    margin-bottom: 35px;
+  }
+}

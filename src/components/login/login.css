@@ -1,0 +1,93 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  place-items: center;
+  align-items: center;
+  height: 70% !important;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-section h2 {
+  margin-bottom: 1rem;
+}
+
+.left-section div {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin-top: 2em;
+}
+
+.left-section label {
+  margin-bottom: 0.5rem;
+}
+
+.left-section input {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+.left-section button {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #0077ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.left-section button:hover {
+  background-color: #0066cc;
+}
+
+.left-section p {
+  margin-top: 1rem;
+}
+
+.left-section a {
+  color: #0077ff;
+}
+
+.right-section {
+  background-size: cover;
+  background-position: center;
+  height: 70% !important;
+}
+
+.right-section img {
+  width: 120%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 1.5em;
+}
+
+@media screen and (max-width: 1024px) {
+  .right-section img {
+    height: 500px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .right-section {
+    display: none;
+  }
+}
+
+.logo {
+  width: 150px;
+}
