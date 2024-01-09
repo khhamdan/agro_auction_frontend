@@ -125,15 +125,15 @@ export default function ProductDetailsPage(productId) {
   useEffect(() => {
     console.log('useEffect - Fetching initial product data');
 
-    // const updateCurrentTime = () => {
-    //   setProduct((prevProduct) => ({
-    //     ...prevProduct,
-    //     auctionEnd: prevProduct.auctionEnd,
-    //   }));
-    // };
+    const updateCurrentTime = () => {
+      setProduct((prevProduct) => ({
+        ...prevProduct,
+        auctionEnd: prevProduct.auctionEnd,
+      }));
+    };
 
     // Update current time every second
-    // const intervalId = setInterval(updateCurrentTime, 5000);
+    const intervalId = setInterval(updateCurrentTime, 5000);
 
     // Fetch initial product data
     getSingleProductApi(productId.productId)
@@ -151,10 +151,10 @@ export default function ProductDetailsPage(productId) {
       });
 
     // Clean up the interval on component unmount
-    // return () => {
-    //   console.log('Cleaning up interval');
-    //   clearInterval(intervalId);
-    // };
+    return () => {
+      console.log('Cleaning up interval');
+      clearInterval(intervalId);
+    };
   }, [productId.productId, bidDone]);
 
   const fetchBidHistory = (auctionId) => {
@@ -260,6 +260,7 @@ export default function ProductDetailsPage(productId) {
           )}
         </Col>
       </Row>
+
       {userId && (
         <Row gutter={[16, 16]} className={styles.sellerDescriptionRow}>
           <Col
@@ -280,29 +281,14 @@ export default function ProductDetailsPage(productId) {
           </Col>
         </Row>
       )}
-      {/* <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          marginBottom: '105px !important',
-          marginTop: '16px',
-        }}
-      >
-        <Tabs defaultActiveKey="1" centered>
-          <Tabs.TabPane tab="Bids" key="1">
-            <ProductBidsTable key="bidsTable" data={bids} />
-          </Tabs.TabPane>
-        </Tabs>
-      </div> */}
+
       {userId && (
         <Row gutter={[16, 16]} className={styles.bidsTableContainer}>
           <Col xs={24} sm={24} md={24} lg={24} xl={24}>
             {bids.length > 0 ? (
               <Tabs defaultActiveKey="1" centered>
                 <Tabs.TabPane tab="Bids" key="1">
+                  {/* Use pagination property for the Table component */}
                   <ProductBidsTable key="bidsTable" data={bids} />
                 </Tabs.TabPane>
               </Tabs>
@@ -312,6 +298,7 @@ export default function ProductDetailsPage(productId) {
           </Col>
         </Row>
       )}
+
       <Modal
         title="Bidding Price"
         visible={isModalOpen}

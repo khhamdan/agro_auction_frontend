@@ -65,6 +65,7 @@ const VerticalTabs = () => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
+    console.log('user', user);
     setName(user.username);
     setEmail(user.email);
     setCnic(user.cnic);

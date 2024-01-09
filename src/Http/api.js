@@ -332,6 +332,19 @@ export const editProfileApi = async (payload) => {
     throw error;
   }
 };
+
+export const editUserFromAdminApi = async (payload) => {
+  try {
+    const res = await MuiBAseUrl.post(
+      'api/users/updateUserInfoFromAdmin',
+      payload
+    );
+    return res;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const settleAuctionApi = async (payload) => {
   try {
     const res = await MuiBAseUrl.post('api/users/settleAuction', payload);

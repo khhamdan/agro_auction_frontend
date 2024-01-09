@@ -4,7 +4,6 @@ import styles from '../farmer/farmer.module.css';
 
 import { useTranslation } from 'react-i18next';
 import AdminSideBarMenu from './menu';
-import AdminUsersTable from './adminUsersTable';
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import AdminTable from './adminTable';
@@ -66,7 +65,7 @@ const AdminUsers = () => {
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div className={styles.siteLayoutContent}>
-            <AdminUsersTable />
+            <AdminTable userInTable={'user'} />
           </div>
         </Content>
       </Layout>

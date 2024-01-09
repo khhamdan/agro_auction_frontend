@@ -1,4 +1,9 @@
-import { DeleteOutlined, EditOutlined, EyeOutlined } from '@ant-design/icons';
+import {
+  CodeSandboxCircleFilled,
+  DeleteOutlined,
+  EditOutlined,
+  EyeOutlined,
+} from '@ant-design/icons';
 import {
   Form,
   Input,
@@ -19,6 +24,7 @@ import {
   deleteProductById,
   deleteuserApi,
   editProfileApi,
+  editUserFromAdminApi,
   getAllProductsApi,
   getAllUsersApi,
   putOnAuction,
@@ -32,7 +38,8 @@ const { Text } = Typography;
 const { confirm } = Modal;
 const { Option } = Select;
 
-const AdminTable = () => {
+const AdminTable = ({ userInTable }) => {
+  console.log('User in Table', userInTable);
   const [viewModalVisible, setViewModalVisible] = useState(false);
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [deleteModalVisible, setDeleteModalVisible] = useState(false);
@@ -59,6 +66,16 @@ const AdminTable = () => {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
+    },
+    {
+      title: 'CNIC',
+      dataIndex: 'cnic',
+      key: 'cnic',
+    },
+    {
+      title: 'Location',
+      dataIndex: 'location',
+      key: 'location',
     },
     {
       title: 'Role',
@@ -104,6 +121,15 @@ const AdminTable = () => {
 
   const handleEditUsers = (user) => {
     setEditedUsers({ ...user });
+    // Set form values here
+    form.setFieldsValue({
+      username: user.username,
+      email: user.email,
+      cnic: user.cnic,
+      location: user.location,
+      role: user.role,
+      // Add other fields as needed
+    });
     setEditModalVisible(true);
   };
 
@@ -116,7 +142,7 @@ const AdminTable = () => {
       .then((res) => {
         getAllUsersApi().then((res) => {
           const filteredUsers = res.data.users.filter(
-            (user) => user.role == 'farmer'
+            (user) => user.role == userInTable
           );
           setUsers(filteredUsers);
         });
@@ -133,11 +159,8 @@ const AdminTable = () => {
   };
 
   const handleEdit = async () => {
-    console.log('Edited user called:', editedUsers);
-
     try {
       const values = await form.validateFields();
-      console.log('Values', values);
 
       // Include userId and productId in the updatedProduct
       const updatedUser = {
@@ -145,9 +168,8 @@ const AdminTable = () => {
         userId: editedUsers.userid,
       };
 
-      console.log('Edited users:', updatedUser);
       // Make API call to update product
-      await editProfileApi(updatedUser);
+      await editUserFromAdminApi(updatedUser);
       setEditModalVisible(false);
 
       Swal.fire({
@@ -156,13 +178,14 @@ const AdminTable = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
+
+      // Update the state directly without a page reload
       getAllUsersApi().then((res) => {
         const filteredUsers = res.data.users.filter(
-          (user) => user.role == 'farmer'
+          (user) => user.role == userInTable
         );
         setUsers(filteredUsers);
       });
-      // Fetch all users after successful edit
     } catch (error) {
       console.error('Validation failed', error);
       Swal.fire({
@@ -173,12 +196,11 @@ const AdminTable = () => {
       });
     }
   };
-
   useEffect(() => {
     getAllUsersApi()
       .then((res) => {
         const filteredUsers = res.data.users.filter(
-          (user) => user.role == 'farmer'
+          (user) => user.role == userInTable
         );
         setUsers(filteredUsers);
       })
@@ -195,7 +217,9 @@ const AdminTable = () => {
 
   return (
     <div className={styles.tableContainer}>
-      <Text className={styles.componentHeading}>Farmer</Text>
+      <Text className={styles.componentHeading}>
+        {userInTable.charAt(0).toUpperCase() + userInTable.slice(1)}
+      </Text>
 
       <Table
         columns={columns}
@@ -221,7 +245,7 @@ const AdminTable = () => {
       >
         <Form
           form={form}
-          initialValues={editedUsers}
+          // initialValues={editedUsers}
           labelCol={{ span: 6 }}
           wrapperCol={{ span: 18 }}
         >
@@ -229,6 +253,12 @@ const AdminTable = () => {
             <Input />
           </Form.Item>
           <Form.Item label="Email" name="email">
+            <Input />
+          </Form.Item>
+          <Form.Item label="CNIC" name="cnic">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Location" name="location">
             <Input />
           </Form.Item>
           <Form.Item label="Role" name="role">

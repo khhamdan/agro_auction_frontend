@@ -55,7 +55,9 @@ const columns = [
 ];
 
 const CartTable = ({ data }) => {
-  return <Table columns={columns} dataSource={data} />;
+  return (
+    <Table columns={columns} dataSource={data} pagination={{ pageSize: 2 }} />
+  );
 };
 
 export default CartTable;

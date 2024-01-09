@@ -64,18 +64,6 @@ function RegisterComponent() {
       return;
     }
 
-    // // Email validation
-    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if (!emailRegex.test(email)) {
-    //   Swal.fire({
-    //     title: 'Error',
-    //     text: 'Invalid email address',
-    //     icon: 'error',
-    //     confirmButtonText: 'Ok',
-    //   });
-    //   return;
-    // }
-
     // Password validation
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
     if (!passwordRegex.test(password)) {

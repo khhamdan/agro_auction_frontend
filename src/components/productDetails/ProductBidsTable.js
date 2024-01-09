@@ -26,8 +26,9 @@ const columns = [
 ];
 
 const ProductBidsTable = ({ data }) => {
-  console.log('Product Bid data', data);
-  return <Table columns={columns} dataSource={data} />;
+  return (
+    <Table columns={columns} dataSource={data} pagination={{ pageSize: 3 }} />
+  );
 };
 
 export default ProductBidsTable;

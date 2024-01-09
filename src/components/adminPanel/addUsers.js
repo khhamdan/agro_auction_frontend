@@ -4,10 +4,8 @@ import styles from '../farmer/farmer.module.css';
 
 import { useTranslation } from 'react-i18next';
 import AdminSideBarMenu from './menu';
-import AdminUsersTable from './adminUsersTable';
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import AdminTable from './adminTable';
 import UserForm from './userForm';
 
 const { Header, Content } = Layout;

@@ -66,7 +66,7 @@ const AdminDashboard = () => {
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div className={styles.siteLayoutContent}>
-            <AdminTable />
+            <AdminTable userInTable={'farmer'} />
           </div>
         </Content>
       </Layout>

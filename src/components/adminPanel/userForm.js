@@ -42,12 +42,19 @@ function UserForm() {
   };
 
   const handleSubmit = () => {
-    // Email validation for @gmail.com format
-    const gmailRegex = /@gmail\.com$/;
-    if (!gmailRegex.test(email)) {
+    // Email validation for specific domains
+    const validEmailDomains = [
+      'gmail.com',
+      'hotmail.com',
+      'yahoo.com',
+      'outlook.com',
+    ];
+    const domainRegex = new RegExp(`@(${validEmailDomains.join('|')})$`, 'i');
+
+    if (!domainRegex.test(email)) {
       Swal.fire({
         title: 'Error',
-        text: 'Email must be in the @gmail.com format',
+        text: 'Invalid email domain. Allowed domains are: gmail.com, hotmail.com, yahoo.com, outlook.com',
         icon: 'error',
         confirmButtonText: 'Ok',
       });
