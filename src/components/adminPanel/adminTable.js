@@ -67,16 +67,7 @@ const AdminTable = ({ userInTable }) => {
       dataIndex: 'email',
       key: 'email',
     },
-    {
-      title: 'CNIC',
-      dataIndex: 'cnic',
-      key: 'cnic',
-    },
-    {
-      title: 'Location',
-      dataIndex: 'location',
-      key: 'location',
-    },
+
     {
       title: 'Role',
       dataIndex: 'role',
@@ -125,8 +116,6 @@ const AdminTable = ({ userInTable }) => {
     form.setFieldsValue({
       username: user.username,
       email: user.email,
-      cnic: user.cnic,
-      location: user.location,
       role: user.role,
       // Add other fields as needed
     });
@@ -255,12 +244,7 @@ const AdminTable = ({ userInTable }) => {
           <Form.Item label="Email" name="email">
             <Input />
           </Form.Item>
-          <Form.Item label="CNIC" name="cnic">
-            <Input />
-          </Form.Item>
-          <Form.Item label="Location" name="location">
-            <Input />
-          </Form.Item>
+
           <Form.Item label="Role" name="role">
             <Select>
               <Option value="user">user</Option>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Tabs, Input, Button, Modal } from 'antd';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { updateProfile } from '../../../Http/api';
 import Swal from 'sweetalert2';
 const { TabPane } = Tabs;
@@ -11,6 +11,7 @@ const VerticalTabs = () => {
   const [email, setEmail] = useState('johndoe@example.com');
   const [cnic, setCnic] = useState('3450167891011');
   const [location, setLocation] = useState('New York');
+  const navigate = useNavigate();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -20,32 +21,10 @@ const VerticalTabs = () => {
     setEmail(e.target.value);
   };
 
-  const handleCnicChange = (e) => {
-    const newCnic = e.target.value;
-    // Remove non-numeric characters
-    const numericCnic = newCnic.replace(/[^0-9]/g, '');
-
-    // Ensure the CNIC has at most 13 digits
-    if (numericCnic.length <= 13) {
-      setCnic(numericCnic);
-    }
-  };
-
-  const handleLocationChange = (e) => {
-    const locationRegex = /^[a-zA-Z\s]+$/;
-    const newLocation = e.target.value;
-
-    if (newLocation === '' || locationRegex.test(newLocation)) {
-      setLocation(newLocation);
-    }
-  };
-
   const submitForm = async () => {
     const user = {
       username: name,
       email,
-      cnic,
-      location,
     };
 
     await updateProfile(id, user).then((res) => {
@@ -57,8 +36,6 @@ const VerticalTabs = () => {
       });
       let user = JSON.parse(localStorage.getItem('user'));
       user.username = name;
-      user.cnic = cnic;
-      user.location = location;
       localStorage.setItem('user', JSON.stringify(user));
     });
   };
@@ -66,12 +43,14 @@ const VerticalTabs = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     console.log('user', user);
-    setName(user.username);
-    setEmail(user.email);
-    setCnic(user.cnic);
-    setLocation(user.location);
-  }, []);
 
+    if (user) {
+      setName(user.username);
+      setEmail(user.email);
+    } else {
+      navigate('/signin');
+    }
+  }, []);
   return (
     <div
       style={{
@@ -90,14 +69,6 @@ const VerticalTabs = () => {
             <h2>Email</h2>
             <Input value={email} disabled />
           </div>
-          <div>
-            <h2>CNIC</h2>
-            <Input value={cnic} disabled />
-          </div>
-          <div>
-            <h2>Location</h2>
-            <Input value={location} disabled />
-          </div>
         </TabPane>
         <TabPane tab="Edit Profile" key="2">
           <div>
@@ -112,22 +83,7 @@ const VerticalTabs = () => {
             <h2>Email</h2>
             <Input value={email} disabled />
           </div>
-          <div>
-            <h2>CNIC</h2>
-            <Input
-              value={cnic}
-              onChange={handleCnicChange}
-              // placeholder="12345-6789101-1"
-            />
-          </div>
-          <div>
-            <h2>Location</h2>
-            <Input
-              value={location}
-              onChange={handleLocationChange}
-              placeholder="lahore"
-            />
-          </div>
+
           <button className="landing-box-button" onClick={submitForm}>
             Edit
           </button>

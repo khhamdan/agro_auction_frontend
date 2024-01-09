@@ -93,9 +93,9 @@ const Header = () => {
     const token = localStorage.getItem('token');
     if (token) {
       const userInfo = JSON.parse(localStorage.getItem('user'));
+      setIsLoggedIn(true);
       setRole(userInfo.role);
       setUserId(userInfo.userId);
-      setIsLoggedIn(true);
       // setIsDropdownVisible(false);
     }
   }, []);
@@ -109,28 +109,26 @@ const Header = () => {
         <Link to="/" style={navLinkStyle} className="nav-link">
           {t('global.Header.home')}
         </Link>
-        {
-  user ? (
-    user.role === 'farmer' ? (
-      <Link to="/farmer" style={navLinkStyle} className="nav-link">
-        {t('global.Header.farmer')}
-      </Link>
-    ) : (
-      <Link to="/consumer" style={navLinkStyle} className="nav-link">
-        {t('global.Header.buyer')}
-      </Link>
-    )
-  ) : (
-    <>
-      <Link to="/farmer" style={navLinkStyle} className="nav-link">
-        {t('global.Header.farmer')}
-      </Link>
-      <Link to="/consumer" style={navLinkStyle} className="nav-link">
-        {t('global.Header.buyer')}
-      </Link>
-    </>
-  )
-}
+        {user ? (
+          user.role === 'farmer' ? (
+            <Link to="/farmer" style={navLinkStyle} className="nav-link">
+              {t('global.Header.farmer')}
+            </Link>
+          ) : (
+            <Link to="/consumer" style={navLinkStyle} className="nav-link">
+              {t('global.Header.buyer')}
+            </Link>
+          )
+        ) : (
+          <>
+            <Link to="/farmer" style={navLinkStyle} className="nav-link">
+              {t('global.Header.farmer')}
+            </Link>
+            <Link to="/consumer" style={navLinkStyle} className="nav-link">
+              {t('global.Header.buyer')}
+            </Link>
+          </>
+        )}
         {/* <Link to="/consumer" style={navLinkStyle} className="nav-link">
           {t('global.Header.buyer')}
         </Link> */}
